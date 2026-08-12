@@ -55,13 +55,23 @@ main {
 .brand strong { display: block; font-size: 1.2rem; }
 .brand span { color: var(--muted); font-size: 0.92rem; }
 
-.locale-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-.locale-nav a {
-  padding: 7px 10px;
-  border-radius: 999px;
+.locale-selector { flex: 0 0 auto; }
+.locale-selector select {
+  width: 180px;
+  max-width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   background: var(--accent-soft);
+  color: var(--text);
+  font: inherit;
   font-weight: 700;
-  text-decoration: none;
+  cursor: pointer;
+}
+
+.locale-selector select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
 }
 
 main { padding: clamp(24px, 5vw, 52px); }
@@ -102,7 +112,8 @@ footer {
   .page { width: min(calc(100% - 20px), 860px); margin-top: 10px; }
   .site-header { align-items: flex-start; flex-wrap: wrap; border-radius: 18px; }
   .app-icon { width: 56px; height: 56px; border-radius: 13px; }
-  .locale-nav { width: 100%; justify-content: flex-end; }
+  .locale-selector { width: 100%; }
+  .locale-selector select { width: 100%; }
   main { border-radius: 18px; }
   h1 { font-size: 1.85rem; }
 }
